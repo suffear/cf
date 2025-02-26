@@ -156,15 +156,6 @@
     "network_config": { "type": "iso" },
     "ntp": true,
     "parallel downloads": 5,
-    "profile_config": {
-        "gfx_driver": "All open-source",
-        "greeter": "ly",
-        "profile": {
-            "custom_settings": {
-                "Hyprland": {
-                    "seat_access": "polkit" } },
-            "details": [ "Hyprland" ],
-            "main": "Desktop" } },
     "save_config": null,
     "swap": true,
     "timezone": "Europe/Berlin",
