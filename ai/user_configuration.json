@@ -1,20 +1,13 @@
-{
-    "additional-repositories": [
-        "multilib"
-    ],
+{ "additional-repositories": [ "multilib" ],
     "archinstall-language": "English",
-    "audio_config": {
-        "audio": "pipewire"
-    },
+    "audio_config": { "audio": "pipewire" },
     "bootloader": "Limine",
     "config_version": "3.0.2",
     "disk_config": {
         "config_type": "manual_partitioning",
-        "device_modifications": [
-            {
+        "device_modifications": [ {
                 "device": "/dev/nvme0n1",
-                "partitions": [
-                    {
+                "partitions": [ {
                         "btrfs": [],
                         "dev_path": "/dev/nvme0n1p2",
                         "flags": [],
@@ -25,29 +18,20 @@
                         "size": {
                             "sector_size": {
                                 "unit": "B",
-                                "value": 512
-                            },
+                                "value": 512 },
                             "unit": "B",
-                            "value": 53744762880
-                        },
+                            "value": 53744762880 },
                         "start": {
                             "sector_size": {
                                 "unit": "B",
-                                "value": 512
-                            },
+                                "value": 512 },
                             "unit": "sectors",
-                            "value": 861173760
-                        },
+                            "value": 861173760 },
                         "status": "modify",
-                        "type": "primary"
-                    },
-                    {
-                        "btrfs": [],
+                        "type": "primary" },
+                    {   "btrfs": [],
                         "dev_path": "/dev/nvme0n1p1",
-                        "flags": [
-                            "boot",
-                            "esp"
-                        ],
+                        "flags": [ "boot", "esp" ],
                         "fs_type": "fat32",
                         "mount_options": [],
                         "mountpoint": "/boot",
@@ -55,40 +39,25 @@
                         "size": {
                             "sector_size": {
                                 "unit": "B",
-                                "value": 512
-                            },
+                                "value": 512 },
                             "unit": "B",
-                            "value": 5347737600
-                        },
+                            "value": 5347737600 },
                         "start": {
                             "sector_size": {
                                 "unit": "B",
-                                "value": 512
-                            },
+                                "value": 512 },
                             "unit": "sectors",
-                            "value": 966144000
-                        },
+                            "value": 966144000 },
                         "status": "modify",
-                        "type": "primary"
-                    }
-                ],
-                "wipe": false
-            }
-        ]
-    },
+                        "type": "primary" } ],
+                "wipe": false } ] },
     "disk_encryption": null,
     "hostname": "archi",
     "kernels": [
         "linux-zen",
-        "linux-hardened"
-    ],
-    "locale_config": {
-        "kb_layout": "us",
-        "sys_enc": "UTF-8",
-        "sys_lang": "en_US"
-    },
+        "linux-hardened" ],
+    "locale_config": { "kb_layout": "us", "sys_enc": "UTF-8", "sys_lang": "en_US" },
     "mirror_config": {
-        "custom_mirrors": [],
         "mirror_regions": {
             "Germany": [
                 "http://ftp.tu-chemnitz.de/pub/linux/archlinux/$repo/os/$arch",
@@ -183,36 +152,21 @@
                 "http://mirrors.aminvakil.com/archlinux/$repo/os/$arch",
                 "https://mirrors.aminvakil.com/archlinux/$repo/os/$arch",
                 "http://mirrors.purring.online/arch/$repo/os/$arch",
-                "https://mirrors.purring.online/arch/$repo/os/$arch"
-            ]
-        }
-    },
-    "network_config": {
-        "type": "iso"
-    },
+                "https://mirrors.purring.online/arch/$repo/os/$arch" ] } },
+    "network_config": { "type": "iso" },
     "ntp": true,
-    "packages": [
-        ""
-    ],
-    "parallel downloads": 0,
+    "parallel downloads": 5,
     "profile_config": {
         "gfx_driver": "All open-source",
         "greeter": "ly",
         "profile": {
             "custom_settings": {
                 "Hyprland": {
-                    "seat_access": "polkit"
-                }
-            },
-            "details": [
-                "Hyprland"
-            ],
-            "main": "Desktop"
-        }
-    },
+                    "seat_access": "polkit" } },
+            "details": [ "Hyprland" ],
+            "main": "Desktop" } },
     "save_config": null,
     "swap": true,
     "timezone": "Europe/Berlin",
     "uki": false,
-    "version": "3.0.2"
-}
+    "version": "3.0.2" }
