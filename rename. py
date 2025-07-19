@@ -1,0 +1,53 @@
+import os
+import re
+
+def rename_files(directory):
+    # Get all files in the directory
+    for filename in os.listdir(directory):
+        # Skip directories
+        if os.path.isdir(os.path.join(directory, filename)):
+            continue
+            
+        new_name = filename
+        
+        # Step 1: Replace underscores with spaces
+        new_name = new_name.replace('_', ' ')
+        
+        # Step 2: Remove leading numbers and any following separators
+        # This pattern matches:
+        # ^\d+ - any digits at the start of the string
+        # [ \-_]* - followed by any number of spaces, hyphens, or underscores
+        new_name = re.sub(r'^\d+[ \-_]*', '', new_name)
+        
+        # Only rename if the name actually changed
+        if new_name != filename:
+            try:
+                original_path = os.path.join(directory, filename)
+                new_path = os.path.join(directory, new_name)
+                
+                # Handle potential name conflicts
+                counter = 1
+                while os.path.exists(new_path):
+                    base, ext = os.path.splitext(new_name)
+                    new_path = os.path.join(directory, f"{base}_{counter}{ext}")
+                    counter += 1
+                
+                os.rename(original_path, new_path)
+                print(f"Renamed: '{filename}' -> '{os.path.basename(new_path)}'")
+            except Exception as e:
+                print(f"Error renaming '{filename}': {e}")
+
+if __name__ == "__main__":
+    import sys
+    
+    if len(sys.argv) != 2:
+        print("Usage: python rename_files.py <directory>")
+        sys.exit(1)
+    
+    directory = sys.argv[1]
+    if not os.path.isdir(directory):
+        print(f"Error: '{directory}' is not a valid directory")
+        sys.exit(1)
+    
+    rename_files(directory)
+    print("File renaming complete.")
